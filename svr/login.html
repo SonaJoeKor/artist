@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			width: 360px;
+			height: 600px;
+			background-color: #FFFFFF;
+			margin : 0 auto;
+		}
+		label {
+			display: inline-block;
+			width : 100px;
+		}
+		input {
+			display : inline-block;
+			width : 200px;
+		}
+		img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			padding-bottom: 50px;
+			width: 200px;
+			height: 200px;
+		}
+		h1 {
+			background-color: #000000;
+			color: #FFFFFF;
+			text-align: center;
+		}
+	</style>
+
+	<script>
+		function move_signup() {
+			location.href="/signup";
+		}
+		function move_Facebook_login() {
+			location.href="/facebooklogin";
+		}
+		function move_Naver_login() {
+			location.href="/naverlogin";
+		}
+		function move_Google_login() {
+			location.href="/googlelogin";
+		}
+		function move_Kakao_login() {
+			location.href="/kakaologin";
+		}
+	</script>
+
+	<title>Login</title>
+</head>
+
+<body>
+	<h1>Login</h1>
+	<form method="post" action="login" accept-charset="utf-8"> 
+	<img border="0" src="/logo" alt="logo">
+		<label for="ID">ID</label>
+		<input type="text" name="ID"/><br />
+		<label for="password1">Password</label>
+		<input type="password" name="password1"/><br />
+	<input type="submit" name="login_submit" value="로그인" />
+	</form>
+	<input type="button" name="signup_btn" 
+		value="회원가입" onclick="move_signup()"/>
+<hr />
+	<input type="button" name="Facebook_login"
+		value="페이스북 로그인" onclick="move_Facebook_login()"/>
+	<input type="button" name="Naver_login"
+		value="네이버 로그인" onclick="move_Naver_login()"/>
+	<input type="button" name="Google_login"
+		value="구글 로그인" onclick="move_Google_login()"/>
+	<input type="button" name="Kakao_login"
+		value="카카오 로그인" onclick="move_Kakao_login()"/>
+</body>
+</html>

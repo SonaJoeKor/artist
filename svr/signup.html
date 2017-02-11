@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			width: 360px;
+			height: 600px;
+			background-color: #FFFFFF;
+			margin : 0 auto;
+		}
+		label {
+			display: inline-block;
+			width : 100px;
+		}
+		input {
+			display : inline-block;
+			width : 200px;
+		}
+		h1 {
+			background-color: #000000;
+			color: #FFFFFF;
+			text-align: center;
+		}
+	</style>
+
+	<title>Login</title>
+</head>
+
+<body>
+	<h1>Join</h1>
+	<form method="post" action="signup" accept-charset="utf-8"> 
+		<label for="ID">E-mail</label>
+		<input type="text" name="ID"/><br />
+		<label for="Nickname">닉네임</label>
+		<input type="text" name="Nickname"/><br />
+		<label for="password1">비밀번호</label>
+		<input type="password" name="password1"/><br />
+		<label for="password2">비밀번호 확인</label>
+		<input type="password" name="password2"/><br />
+	<input type="submit" name="join_submit" value="확인"/>
+	</form>
+</body>
+</html>
