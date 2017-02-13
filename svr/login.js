@@ -2,7 +2,7 @@ var db = require('mariasql');
 var con = new db({
 	host : '127.0.0.1',
 	user : 'sjs',
-	password : 'wlstjr30',
+	password : 'qwer1234',
 	db : 'jinseok'
 });
 
@@ -34,11 +34,13 @@ router.post('/login', function(req, res) {
 		con.query('select ID, password from UserInfo ' + 
 			'where ID = "' + d.ID + '";',
 			function(err, rows) {
-			if (rows.indexOf('password') != -1) {
+			console.log(rows);
+			if (rows.length == 0) {
 				res.redirect('/signup');
-			} // ID값이 없을 때 처리를 위해 만들었지만 잘 안 됨.
+			}
 
-			if (d.ID==rows[0].ID && d.password1==rows[0].password) {
+			else if(d.ID==rows[0].ID && d.password1==rows[0].password) {
+				console.log(rows.indexOf('password'));
 				res.writeHead(200, 
 				{'Content-Type':'text/html;charset=UTF-8'});
 				res.write('<title>로그인 성공</title>');
