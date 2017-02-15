@@ -23,6 +23,7 @@ exports.post_signup = function (req, res) {
 			con.query('insert into user(ID, name, password)'
 				+ ' VALUES("' + d.ID +'", "' + d.Nickname
 				+ '", "' + d.password1 + '");');
+			con.query('insert into profile(userIndex) values((select userIndex from user where id = "' + d.ID + '"));');
 			console.log('signup success');			
 			res.redirect('/login');
 		} else {

@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<script>
+			function selectEvent(selectObj) {
+				if(selectObj.value == 'music')
+					location.href="/new_music";
+				else if(selectObj.value == 'photo')
+					location.href="/new_photo";
+				else
+					location.href="/new_vedio";
+			}
+                	function menu_click() {
+                	        location.href="/menu";
+                	}
+                	function move_news() {
+                	        location.href="/news";
+                	}
+                	function move_art() {
+                	        location.href="/art";
+                	}
+                	function move_music() {
+				location.href="/music";
+                	}
+        	</script>
+	</head>
+	<body>
+		<div id="header">
+			<select name='genre' onChange="javascript:selectEvent(this)" >
+				<option value="">Genre</option>
+    				<option value="music">Music</option>
+    				<option value="photo">Photo</option>
+				<option value="vedio">Vedio</option>
+			</select>
+        		<input type="button" name="signup_btn" 
+        		        value="Profile" onclick="move_profile()"/>
+        		<input type="button" name="signup_btn" 
+        		        value="Piece" onclick="move_piece()"/>
+        		<input type="button" name="signup_btn" 
+        		        value="Follow" onclick="move_follow()"/>
+		</div>
+
+	</body>
+</html>
