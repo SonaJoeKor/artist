@@ -6,5 +6,3 @@ exports.get_news = function (req, res) {
 		res.end(data);
 	});
 }
-
-// exports.post_news = function (req, res) {}

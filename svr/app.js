@@ -8,11 +8,11 @@ var router = express.Router();
 var login = require('./home/login');
 var signup = require('./home/signup');
 var news = require('./home/news');
-var profile = require('./home/profile');
-var user_info = require('./home/user_info');
-var new_music = require('./home/new_music');
-var new_photo = require('./home/new_photo');
-var new_vedio = require('./home/new_vedio');
+var profile = require('./user_info/profile');
+var user_info = require('./user_info/user_info');
+var new_music = require('./user_info/new_music');
+var new_photo = require('./user_info/new_photo');
+var new_vedio = require('./user_info/new_vedio');
 //GET
 router.get('/', login.get_root);
 
@@ -33,12 +33,11 @@ router.get('/new_photo', new_photo.get_new_photo);
 router.get('/new_music', new_music.get_new_music);
 
 router.get('/new_vedio', new_vedio.get_new_vedio);
+
 //POST
 router.post('/login', login.post_login);
 
 router.post('/signup', signup.post_signup);
-
-//router.post('/news', news.post_news); 미구현
 
 //DELETE
 
