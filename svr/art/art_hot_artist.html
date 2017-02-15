@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			width: 360px;
+			height: 600px;
+			background-color: #FFFFFF;
+			margin : 0 auto;
+		}
+		#header {
+			width: 360px;
+			height: 120px;
+		}
+		#content {
+			width: 360px;
+			height: 480px;
+			position: absolute;
+			border: 0px;
+			overflow: hidden;
+		}
+		ul {
+			width: 360px;
+		}
+		li {
+			height: 200px;
+			background-color: #FFFF00;
+		}
+		#scrollBlind {
+			width: 380px;
+			height: 100%;
+			overflow-y: scroll;
+			background-color: #00FFFF;
+		}
+		input {
+			display: inline-block;
+			width:50px;
+			height:50px;
+		}
+		img {
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+
+	<script>
+		function move_user_info() {
+			location.href="/user_info";
+		}
+		function menu_click() {
+			location.href="/menu";
+		}
+		function move_news() {
+			location.href="/news";
+		}
+		function move_art() {
+			location.href="/art";
+		}
+		function move_music() {
+			location.href="/music";
+		}
+
+		function move_art_hot_artist() {
+			location.href="/art/hot/artist";
+		}
+	</script>
+
+	<title>미술 실시간 아티스트</title>
+</head>
+
+<body>
+<div id="header">
+	<input type="button" name="user_info_btn" 
+		value="회원정보" onclick="move_user_info()"/>
+	미술 실시간 아티스트
+	<input type="button" name="menu_btn" 
+		value="메뉴" onclick="menu_click()"/>
+	<br>
+	<input type="button" name="news_btn" 
+		value="뉴스피드" onclick="move_news()"/>
+	<input type="button" name="art_btn" 
+		value="미술" onclick="move_art()"/>
+	<input type="button" name="music_btn" 
+		value="음악" onclick="move_music()"/>
+</div>
+
+<div id="content">
+	<div id="scrollBlind">
+		<ul>
+			<li>
+			아티스트 이름<input type="button" 
+			name="art_hot_artist_btn" value="더 보기"
+			onclick="move_art_hot_artist()"/><br>
+			<img border="0" src="" alt="img1">
+			<img border="0" src="" alt="img2">
+			<img border="0" src="" alt="img3">
+			</li>
+
+			<li>
+			아티스트 이름<input type="button" 
+			name="art_hot_artist_btn" value="더 보기"
+			onclick="move_art_hot_artist()"/><br>
+			<img border="0" src="" alt="img4">
+			<img border="0" src="" alt="img5">
+			<img border="0" src="" alt="img6">
+			</li>
+
+			<li>
+			아티스트 이름<input type="button" 
+			name="art_hot_artist_btn" value="더 보기"
+			onclick="move_art_hot_artist()"/><br>
+			<img border="0" src="" alt="img7">
+			<img border="0" src="" alt="img8">
+			<img border="0" src="" alt="img9">
+			</li>
+
+			<li>
+			아티스트 이름<input type="button" 
+			name="art_hot_artist_btn" value="더 보기"
+			onclick="move_art_hot_artist()"/><br>
+			<img border="0" src="" alt="img10">
+			<img border="0" src="" alt="img11">
+			<img border="0" src="" alt="img12">
+			</li>
+
+			<li>
+			아티스트 이름<input type="button" 
+			name="art_hot_artist_btn" value="더 보기"
+			onclick="move_art_hot_artist()"/><br>
+			<img border="0" src="" alt="img13">
+			<img border="0" src="" alt="img14">
+			<img border="0" src="" alt="img15">
+			</li>
+		</ul>
+	</div>
+</div>
+
+</body>
+</html>

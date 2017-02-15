@@ -37,6 +37,10 @@
 			width:50px;
 			height:50px;
 		}
+		img {
+			width: 100px;
+			height: 100px;
+		}
 	</style>
 
 	<script>
@@ -55,16 +59,26 @@
 		function move_music() {
 			location.href="/music";
 		}
+
+		function move_art_popularity_day() {
+			location.href="/art/popularity/day";
+		}
+		function move_art_popularity_week() {
+			location.href="/art/popularity/week";
+		}
+		function move_art_popularity_month() {
+			location.href="/art/popularity/month";
+		}
 	</script>
 
-	<title>News</title>
+	<title>미술 기간 인기</title>
 </head>
 
 <body>
 <div id="header">
 	<input type="button" name="user_info_btn" 
 		value="회원정보" onclick="move_user_info()"/>
-	뉴스피드
+	미술 기간 인기
 	<input type="button" name="menu_btn" 
 		value="메뉴" onclick="menu_click()"/>
 	<br>
@@ -77,22 +91,33 @@
 </div>
 
 <div id="content">
-	<input type="checkbox" name="filtering"
-		value="art" checked="checked">art
-	<input type="checkbox" name="filtering"
-		value="music" checked="checked">music
 	<div id="scrollBlind">
 		<ul>
-			<li><img border="0" src="" alt="img1"><br>text1</li>
-			<li><img border="0" src="" alt="img2"><br>text2</li>
-			<li><img border="0" src="" alt="img3"><br>text3</li>
-			<li><img border="0" src="" alt="img4"><br>text4</li>
-			<li><img border="0" src="" alt="img5"><br>text5</li>
-			<li><img border="0" src="" alt="img6"><br>text6</li>
-			<li><img border="0" src="" alt="img7"><br>text7</li>
-			<li><img border="0" src="" alt="img8"><br>text8</li>
-			<li><img border="0" src="" alt="img9"><br>text9</li>
-			<li><img border="0" src="" alt="img0"><br>text0</li>
+			<li>
+			일간<input type="button" name="art_popularity_day_btn" 
+			value="더 보기" onclick="move_art_popularity_day()"/><br>
+			<img border="0" src="" alt="img1">
+			<img border="0" src="" alt="img2">
+			<img border="0" src="" alt="img3">
+			</li>
+
+			<li>
+			주간<input type="button" name="art_popularity_week_btn" 
+			value="더 보기" onclick="move_art_popularity_week()"/>
+			<br>
+			<img border="0" src="" alt="img4">
+			<img border="0" src="" alt="img5">
+			<img border="0" src="" alt="img6">
+			</li>
+
+			<li>
+			월간<input type="button" name="art_popularity_month_btn" 
+			value="더 보기" onclick="move_art_popularity_month()"/>
+			<br>
+			<img border="0" src="" alt="img7">
+			<img border="0" src="" alt="img8">
+			<img border="0" src="" alt="img9">
+			</li>
 		</ul>
 	</div>
 </div>
