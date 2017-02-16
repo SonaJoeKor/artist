@@ -1,0 +1,42 @@
+/* 뉴스피드, 미술, 음악의 공용 css style sheet */
+<style>
+	body {
+		width: 360px;
+		height: 600px;
+		background-color: #FFFFFF;
+		margin : 0 auto;
+	}
+	#header {
+		width: 360px;
+		height: 120px;
+	}
+	#content {
+		width: 360px;
+		height: 480px;
+		position: absolute;
+		border: 0px;
+		overflow: hidden;
+	}
+	ul {
+		width: 360px;
+	}
+	li {
+		height: 200px;
+		background-color: #FFFF00;
+	}
+	#scrollBlind {
+		width: 380px;
+		height: 100%;
+		overflow-y: scroll;
+		background-color: #00FFFF;
+	}
+	input {
+		display: inline-block;
+		width:50px;
+		height:50px;
+	}
+	img {
+		width: 100px;
+		height: 100px;
+	}
+</style>

@@ -1,72 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-		body {
-			width: 360px;
-			height: 600px;
-			background-color: #FFFFFF;
-			margin : 0 auto;
-		}
-		#header {
-			width: 360px;
-			height: 120px;
-		}
-		#content {
-			width: 360px;
-			height: 480px;
-			position: absolute;
-			border: 0px;
-			overflow: hidden;
-		}
-		ul {
-			width: 360px;
-		}
-		li {
-			height: 200px;
-			background-color: #FFFF00;
-		}
-		#scrollBlind {
-			width: 380px;
-			height: 100%;
-			overflow-y: scroll;
-			background-color: #00FFFF;
-		}
-		input {
-			display: inline-block;
-			width:50px;
-			height:50px;
-		}
-		img {
-			width: 100px;
-			height: 100px;
-		}
-	</style>
-
-	<script>
-		function move_user_info() {
-			location.href="/user_info";
-		}
-		function menu_click() {
-			location.href="/menu";
-		}
-		function move_news() {
-			location.href="/news";
-		}
-		function move_art() {
-			location.href="/art";
-		}
-		function move_music() {
-			location.href="/music";
-		}
-
-		function move_art_hot_piece() {
-			location.href="/art/hot/piece";
-		}
-		function move_art_hot_artist() {
-			location.href="/art/hot/artist";
-		}
-	</script>
+	<link href="/css/mainstyle.css" rel="stylesheet">
+	<script src="/script/maintap.js" 
+		type="text/javascript" charset="utf-8"></script>	
+	<script src="/script/art_btn.js" 
+		type="text/javascript" charset="utf-8"></script>
 
 	<title>미술 실시간</title>
 </head>

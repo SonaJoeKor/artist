@@ -103,12 +103,15 @@ router.post('/signup', signup.post_signup);
 //PUT
 
 app.use(router);
+app.use('/script', express.static(__dirname + "/script"));
+app.use('/css', express.static(__dirname + "/css"));
 app.use(session({
 	key: 'sid',
 	secret: 'keyboard cat',
 	resave: false,
 	saveUninitialized: true
 }))
+
 app.listen(52273, function() {
 	console.log('52273 server is running');
 });
