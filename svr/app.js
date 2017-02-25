@@ -5,104 +5,111 @@ var session = require('express-session');
 var app = express();
 var router = express.Router();
 
-var login = require('./home/login');
-var signup = require('./home/signup');
-var news = require('./home/news');
-var profile = require('./user_info/profile');
-var user_info = require('./user_info/user_info');
-var new_music = require('./user_info/new_music');
-var new_photo = require('./user_info/new_photo');
-var new_vedio = require('./user_info/new_vedio');
+var home = require('./home/home');
 var art = require('./art/art');
 var music = require('./music/music');
+var user_info = require('./user_info/user_info');
+var manager = require('./manager/manager');
 
-//GET
-//home
-router.get('/', login.get_root);
+// home
+app.use('/', home);
 
-router.get('/login', login.get_login);
+app.use('/login', home);
 
-router.get('/logo', login.get_logo);
+app.use('/signup', home);
 
-router.get('/signup', signup.get_signup);
-
-router.get('/news', news.get_news);
-
-// user_info
-router.get('/profile', profile.get_profile);
-
-router.get('/user_info', user_info.get_user_info);
-
-router.get('/new_photo', new_photo.get_new_photo);
-
-router.get('/new_music', new_music.get_new_music);
-
-router.get('/new_vedio', new_vedio.get_new_vedio);
+app.use('/news', home);
 
 // art
-router.get('/art', art.get_art);
+app.use('/', art); // 실질적으로 /art 연결
 
-router.get('/art/news', art.get_art_news);
+// app.use('/art', art); /art/art에서 페이지뿌림
 
-router.get('/art/hot', art.get_art_hot);
+app.use('/art/news', art);
 
-router.get('/art/hot/artist', art.get_art_hot_artist);
+app.use('/art/hot', art);
 
-router.get('/art/hot/piece', art.get_art_hot_piece);
+app.use('/art/hot/artist', art);
 
-router.get('/art/popularity', art.get_art_popularity);
+app.use('/art/hot/piece', art);
 
-router.get('/art/popularity/day', art.get_art_popularity_day);
+app.use('/art/popularity', art);
 
-router.get('/art/popularity/week', art.get_art_popularity_week);
+app.use('/art/popularity/day', art);
 
-router.get('/art/popularity/month', art.get_art_popularity_month);
+app.use('/art/popularity/week', art);
 
-router.get('/art/recommendation', art.get_art_recommendation);
+app.use('/art/popularity/month', art);
 
-router.get('/art/recommendation/artist', art.get_art_recommendation_artist);
+app.use('/art/recommendation', art);
 
-router.get('/art/recommendation/piece', art.get_art_recommendation_piece);
+app.use('/art/recommendation/artist', art);
 
-router.get('/art/random', art.get_art_random);
+app.use('/art/recommendation/piece', art);
+
+app.use('/art/random', art);
 
 // music
-router.get('/music', music.get_music);
+app.use('/', music); // 실질적으로 /music 연결
 
-router.get('/music/news', music.get_music_news);
+// app.use('/music', music); /music/music에서 페이지뿌림
 
-router.get('/music/hot', music.get_music_hot);
+app.use('/music/news', music);
 
-router.get('/music/hot/artist', music.get_music_hot_artist);
+app.use('/music/hot', music);
 
-router.get('/music/hot/piece', music.get_music_hot_piece);
+app.use('/music/hot/artist', music);
 
-router.get('/music/popularity', music.get_music_popularity);
+app.use('/music/hot/piece', music);
 
-router.get('/music/popularity/day', music.get_music_popularity_day);
+app.use('/music/popularity', music);
 
-router.get('/music/popularity/week', music.get_music_popularity_week);
+app.use('/music/popularity/day', music);
 
-router.get('/music/popularity/month', music.get_music_popularity_month);
+app.use('/music/popularity/week', music);
 
-router.get('/music/recommendation', music.get_music_recommendation);
+app.use('/music/popularity/month', music);
 
-router.get('/music/recommendation/artist', music.get_music_recommendation_artist);
+app.use('/music/recommendation', music);
 
-router.get('/music/recommendation/piece', music.get_music_recommendation_piece);
+app.use('/music/recommendation/artist', music);
 
-router.get('/music/random', music.get_music_random);
+app.use('/music/recommendation/piece', music);
 
-//POST
-router.post('/login', login.post_login);
+app.use('/music/random', music);
 
-router.post('/signup', signup.post_signup);
+// user_info
+app.use('/', user_info); // 실질적으로 /user_info 연결
 
-//DELETE
+// app.use('/user_info', user_info); /user_info/user_info에 페이지 뿌림
 
-//PUT
+app.use('/profile', user_info);
 
-app.use(router);
+app.use('/new_photo', user_info);
+
+app.use('/new_music', user_info);
+
+app.use('/new_vedio', user_info);
+
+// manager
+app.use('/manager/login', manager);
+
+app.use('/manager/home', manager);
+
+app.use('/manager/users', manager);
+
+app.use('/manager/notice/new', manager);
+
+app.use('/manager/notice/update', manager)
+
+app.use('/manager/appinfo/update', manager);
+
+app.use('/manager/qna/new', manager);
+
+app.use('/manager/qna/update', manager);
+
+// directory
+app.use('/home', express.static(__dirname + "/home"));
 app.use('/script', express.static(__dirname + "/script"));
 app.use('/css', express.static(__dirname + "/css"));
 app.use(session({
@@ -111,7 +118,6 @@ app.use(session({
 	resave: false,
 	saveUninitialized: true
 }))
-
 app.listen(52273, function() {
 	console.log('52273 server is running');
 });

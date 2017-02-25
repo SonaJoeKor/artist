@@ -1,92 +1,95 @@
+var express = require('express');
+var router = express.Router();
+module.exports = router;
 var fs = require('fs');
 
-exports.get_music = function (req, res) {
+router.get('/music', function (req, res) {
         fs.readFile('music/music.html', function(err, data) {
                 res.writeHead(200, {'Content-Type':'text/html;charset=UTF-8'});
                 res.end(data);
         });
-}
+});
 
-exports.get_music_news = function (req, res) {
+router.get('/music/news', function (req, res) {
         fs.readFile('music/music_news.html', function(err, data) {
                 res.writeHead(200, {'Content-Type':'text/html;charset=UTF-8'});
                 res.end(data);
         });
-}
+});
 
-exports.get_music_hot = function (req, res) {
+router.get('/music/hot', function (req, res) {
         fs.readFile('music/music_hot.html', function(err, data) {
                 res.writeHead(200, {'Content-Type':'text/html;charset=UTF-8'});
                 res.end(data);
         });
-}
+});
 
-exports.get_music_hot_artist = function (req, res) {
+router.get('/music/hot/artist', function (req, res) {
         fs.readFile('music/music_hot_artist.html', function(err, data) {
                 res.writeHead(200, {'Content-Type':'text/html;charset=UTF-8'});
                 res.end(data);
         });
-}
+});
 
-exports.get_music_hot_piece = function (req, res) {
+router.get('/music/hot/piece', function (req, res) {
         fs.readFile('music/music_hot_piece.html', function(err, data) {
                 res.writeHead(200, {'Content-Type':'text/html;charset=UTF-8'});
                 res.end(data);
         });
-}
+});
 
-exports.get_music_popularity = function (req, res) {
+router.get('/music/popularity', function (req, res) {
         fs.readFile('music/music_popularity.html', function(err, data) {
                 res.writeHead(200, {'Content-Type':'text/html;charset=UTF-8'});
                 res.end(data);
         });
-}
+});
 
-exports.get_music_popularity_day = function (req, res) {
+router.get('/music/popularity/day', function (req, res) {
         fs.readFile('music/music_popularity_day.html', function(err, data) {
                 res.writeHead(200, {'Content-Type':'text/html;charset=UTF-8'});
                 res.end(data);
         });
-}
+});
 
-exports.get_music_popularity_week = function (req, res) {
+router.get('/music/popularity/week', function (req, res) {
         fs.readFile('music/music_popularity_week.html', function(err, data) {
                 res.writeHead(200, {'Content-Type':'text/html;charset=UTF-8'});
                 res.end(data);
         });
-}
+});
 
-exports.get_music_popularity_month = function (req, res) {
+router.get('/music/popularity/month', function (req, res) {
         fs.readFile('music/music_popularity_month.html', function(err, data) {
                 res.writeHead(200, {'Content-Type':'text/html;charset=UTF-8'});
                 res.end(data);
         });
-}
+});
 
-exports.get_music_recommendation = function (req, res) {
+router.get('/music/recommendation', function (req, res) {
         fs.readFile('music/music_recommendation.html', function(err, data) {
                 res.writeHead(200, {'Content-Type':'text/html;charset=UTF-8'});
                 res.end(data);
         });
-}
+});
 
-exports.get_music_recommendation_artist = function (req, res) {
+router.get('/music/recommendation/artist', function (req, res) {
         fs.readFile('music/music_recommendation_artist.html', function(err, data) {
                 res.writeHead(200, {'Content-Type':'text/html;charset=UTF-8'});
                 res.end(data);
         });
-}
+});
 
-exports.get_music_recommendation_piece = function (req, res) {
+router.get('/music/recommendation/piece', function (req, res) {
         fs.readFile('music/music_recommendation_piece.html', function(err, data) {
                 res.writeHead(200, {'Content-Type':'text/html;charset=UTF-8'});
                 res.end(data);
         });
-}
+});
 
-exports.get_music_random = function (req, res) {
+router.get('/music/random', function (req, res) {
         fs.readFile('music/music_random.html', function(err, data) {
                 res.writeHead(200, {'Content-Type':'text/html;charset=UTF-8'});
                 res.end(data);
         });
-}
+});
